@@ -1,2 +1,5 @@
 
 java-adv1/java-adv1.iml
+*.iml
+/.idea/
+/out/
