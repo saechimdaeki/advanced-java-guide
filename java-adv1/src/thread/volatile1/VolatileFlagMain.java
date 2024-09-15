@@ -6,8 +6,8 @@ import static util.ThreadUtils.sleep;
 public class VolatileFlagMain {
 
     public static void main(String[] args) {
-        MyTask task = new MyTask();
-        Thread t = new Thread(task, "work");
+        final MyTask task = new MyTask();
+        final Thread t = new Thread(task, "work");
         log("runFlag = " + task.runFlag);
 
         t.start();
@@ -21,8 +21,8 @@ public class VolatileFlagMain {
 
     static class MyTask implements Runnable {
 
-        boolean runFlag = true;
-//        volatile  boolean runFlag = true;
+//        boolean runFlag = true;
+        volatile  boolean runFlag = true;
 
         @Override
         public void run() {
