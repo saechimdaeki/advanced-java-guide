@@ -1,4 +1,4 @@
-package thread.contronl;
+package thread.control;
 
 public class CheckedExceptionMain {
 

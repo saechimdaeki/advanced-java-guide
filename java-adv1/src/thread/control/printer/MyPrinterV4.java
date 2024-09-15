@@ -1,4 +1,4 @@
-package thread.contronl.printer;
+package thread.control.printer;
 
 import static util.MyLogger.log;
 
@@ -6,7 +6,7 @@ import java.util.Queue;
 import java.util.Scanner;
 import java.util.concurrent.ConcurrentLinkedQueue;
 
-public class MyPrinterV2 {
+public class MyPrinterV4 {
     public static void main(String[] args) {
         final Printer printer = new Printer();
         final Thread printerThread = new Thread(printer, "printer");
@@ -17,7 +17,6 @@ public class MyPrinterV2 {
             log("프린터할 문서를 입력하세요 종료 (q): ");
             final String input = userInput.nextLine();
             if ("q".equals(input)) {
-                printer.work = false;
                 printerThread.interrupt();
                 break;
             }
@@ -26,16 +25,14 @@ public class MyPrinterV2 {
     }
 
     static class Printer implements Runnable {
-
-        volatile boolean work = true;
-
         Queue<String> jobQueue = new ConcurrentLinkedQueue<>();
 
         @Override
         public void run() {
 
-            while (work) {
+            while (!Thread.interrupted()) {
                 if (jobQueue.isEmpty()) {
+                    Thread.yield();
                     continue;
                 }
                 try {

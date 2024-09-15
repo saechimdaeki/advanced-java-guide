@@ -1,6 +1,4 @@
-package thread.contronl.yield;
-
-import static util.ThreadUtils.sleep;
+package thread.control.yield;
 
 public class YieldMain {
 

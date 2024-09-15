@@ -1,4 +1,4 @@
-package thread.contronl.printer;
+package thread.control.printer;
 
 import static util.MyLogger.log;
 
