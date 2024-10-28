@@ -3,12 +3,13 @@ package io.member;
 import java.util.List;
 import java.util.Scanner;
 
-import io.member.impl.FileMemberRepository;
+import io.member.impl.DataMemberRepository;
 
 public class MemberConsoleMain {
 
     //    private static final MemberRepository repository = new MemoryMemberRepository();
-    private static final MemberRepository repository = new FileMemberRepository();
+//    private static final MemberRepository repository = new FileMemberRepository();
+    private static final MemberRepository repository = new DataMemberRepository();
 
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
