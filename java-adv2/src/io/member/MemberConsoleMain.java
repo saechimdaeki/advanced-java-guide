@@ -3,11 +3,12 @@ package io.member;
 import java.util.List;
 import java.util.Scanner;
 
-import io.member.impl.MemoryMemberRepository;
+import io.member.impl.FileMemberRepository;
 
 public class MemberConsoleMain {
 
-    private static final MemberRepository repository = new MemoryMemberRepository();
+    //    private static final MemberRepository repository = new MemoryMemberRepository();
+    private static final MemberRepository repository = new FileMemberRepository();
 
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
@@ -27,7 +28,7 @@ public class MemberConsoleMain {
                     break;
                 case 3:
                     System.out.println("프로그램을 종료합니다.");
-                    break;
+                    return;
                 default:
                     System.out.println("잘못된 선택입니다. 다시 입력하세요");
             }
