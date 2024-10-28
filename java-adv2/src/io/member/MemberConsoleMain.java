@@ -4,13 +4,15 @@ import java.util.List;
 import java.util.Scanner;
 
 import io.member.impl.DataMemberRepository;
+import io.member.impl.ObjectMemberRepository;
 
 public class MemberConsoleMain {
 
     //    private static final MemberRepository repository = new MemoryMemberRepository();
 //    private static final MemberRepository repository = new FileMemberRepository();
-    private static final MemberRepository repository = new DataMemberRepository();
+//    private static final MemberRepository repository = new DataMemberRepository();
 
+    private static final MemberRepository repository = new ObjectMemberRepository();
     public static void main(String[] args) {
         final Scanner scanner = new Scanner(System.in);
         while (true) {
