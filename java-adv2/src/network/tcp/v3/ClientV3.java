@@ -35,11 +35,11 @@ public class ClientV3 {
             final String received = input.readUTF();
             log("client <- server: " + received);
 
-            // 자원 정리
-            log("연결 종료: " + socket);
-            input.close();
-            output.close();
-            socket.close();
         }
+        // 자원 정리
+        log("연결 종료: " + socket);
+        input.close();
+        output.close();
+        socket.close();
     }
 }
