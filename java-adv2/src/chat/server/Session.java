@@ -38,10 +38,9 @@ public class Session implements Runnable {
                 String received = input.readUTF();
                 log("client -> server: " + received);
 
-                // 메시지를 전체에게 보내기
-                sessionManager.sendAll(received);
+                commandManager.execute(received, this);
             }
-        }catch (IOException e) {
+        } catch (IOException e) {
             log(e);
         } finally {
             sessionManager.remove(this);
