@@ -1,10 +1,9 @@
-package was.httpserver.servlet;
+package was.httpserver.servlet.annotation;
 
 import was.httpserver.HttpRequest;
 import was.httpserver.HttpResponse;
 import was.httpserver.HttpServlet;
 import was.httpserver.PageNotFoundException;
-import was.httpserver.servlet.annotation.Mapping;
 
 import java.io.IOException;
 import java.lang.reflect.InvocationTargetException;
